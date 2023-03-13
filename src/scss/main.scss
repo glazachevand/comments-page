@@ -1,0 +1,115 @@
+@use "sass:math";
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/fonts";
+@import "./base/base";
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #1f4037;
+}
+label {
+  color: #777;
+  font-size: 0.75rem;
+}
+input,
+textarea {
+  display: block;
+  padding: 5px;
+  background: $backgroundColorInput;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+input[type="text"] {
+  width: 50%;
+  @media (max-width: $md) {
+    width: 100%;
+  }
+}
+textarea {
+  width: 100%;
+  min-height: 60px;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+.red {
+  color: $redColor;
+  font-weight: bold;
+}
+.invalid {
+  border-color: $redColor;
+}
+.message-error {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: $redColor;
+  border: 1px solid $redColor;
+  border-radius: 10px;
+  background-color: transparent;
+  z-index: 10;
+}
+.add-comment {
+  margin-bottom: 15px;
+  &__notes {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-style: italic;
+  }
+  &__row {
+    position: relative;
+    margin: 0 0 10px 0;
+  }
+  &__submit {
+    padding: 7px 10px;
+    font-weight: bold;
+    color: #0a8578;
+    background-color: $backgroundColorInput;
+    &:hover {
+      background-color: #f2efef;
+    }
+  }
+}
+.comments {
+  &__item {
+    border-bottom: 2px solid #e7e7e7;
+  }
+}
+.comment {
+  padding: 10px 0;
+  &__author {
+    line-height: 1.5em;
+    font-weight: bold;
+    color: #0a8578;
+  }
+  &__date {
+    margin: 0 0 10px 0;
+    font-size: 0.75rem;
+  }
+  &__text {
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+  &__btn-row {
+    display: flex;
+    align-items: center;
+  }
+  &__like {
+    width: 1.25rem;
+  }
+  &__like-count {
+    margin-left: 5px;
+    font-size: 0.75rem;
+    color: $redColor;
+  }
+  &__remove {
+    margin-left: auto;
+  }
+}
