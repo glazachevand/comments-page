@@ -43,8 +43,11 @@ function clickHandler(e) {
 
   switch (e.target.getAttribute('data-action')) {
     case 'remove':
-      model.removeComment(+li.dataset.key);
-      view.removeCommentFromView(li);
+      const answer = confirm('Удалить комментарий?');
+      if (answer) {
+        model.removeComment(+li.dataset.key);
+        view.removeCommentFromView(li);
+      }
       break;
     case 'like':
       view.renderLikes(li, model.countLike(+li.dataset.key, 'like'), 'like');

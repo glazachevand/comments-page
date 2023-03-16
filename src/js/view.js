@@ -17,7 +17,7 @@ ViewComments.prototype.renderNewComment = function (comment) {
   const html = `
   <li class="comments__item comment" data-key="${comment.id}">
     <div class="comment__author">${comment.author}</div>
-    <div class="comment__date"> <time datetime="${comment.date}">${this.renderTime(comment.date)}</time></div>
+    <div class="comment__date"> <time datetime="${comment.date}">${this.renderDate(comment.date)}</time></div>
     <p class="comment__text">${comment.text}</p>
     <div class="comment__btn-row">
       <div class="like comment__like icofont-ui-love" title="Нравится" data-action="like"></div>
@@ -28,7 +28,7 @@ ViewComments.prototype.renderNewComment = function (comment) {
   this.list.insertAdjacentHTML('beforeend', html);
 }
 
-ViewComments.prototype.renderTime = function (timestamp) {
+ViewComments.prototype.renderDate = function (timestamp) {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
@@ -38,10 +38,11 @@ ViewComments.prototype.renderTime = function (timestamp) {
   if (date >= today && date < tomorrow) {
     return `сегодня, ${now.toLocaleTimeString('ru-RU').slice(0, -3)}`;
   } else if (date >= yesterday && date < today) {
-    //return `вчера, ${date.toLocaleTimeString('ru-RU').slice(0, -3)}`;
-    return `вчера`;
+    return `вчера, ${now.toLocaleTimeString('ru-RU').slice(0, -3)}`;
+    //return `вчера`;
   } else {
-    return `${date.toLocaleDateString('ru-RU')}`;
+    return `${date.toLocaleDateString('ru-RU')}, ${now.toLocaleTimeString('ru-RU').slice(0, -3)}`;
+    //return `${ date.toLocaleDateString('ru-RU') } `;
   }
 }
 
