@@ -2,10 +2,13 @@
   "name": "comments",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/glazachevand/comments-page",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp --production"
+    "build": "gulp --production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "last 3 versions"
@@ -55,5 +58,8 @@
     "sass": "^1.52.1",
     "webpack": "^5.72.1",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
