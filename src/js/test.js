@@ -17,7 +17,7 @@ export const testData = [
   new TestComment(
     2,
     'Aikidoka',
-    '2013-02-31T12:17:58.215Z',
+    '2013-02-21T12:17:58.215Z',
     'I would like to invite you on my Birthday',
     '2',
   ),
