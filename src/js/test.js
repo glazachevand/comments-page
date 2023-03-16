@@ -9,16 +9,16 @@ function TestComment(id, author, date, text, likes) {
 export const testData = [
   new TestComment(
     1,
-    'Имя',
-    '2013-02-31T12:17:58.215Z',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nemo veritatis dolorum maiores modi, facere, dicta quo earum soluta, assumenda incidunt! Beatae totam quidem, iusto',
-    '',
+    'Некрасов',
+    '1861-11-02',
+    'Однажды, в студеную зимнюю пору, я из лесу вышел. Был сильный мороз. Гляжу, поднимается медленно в гору лошадка, везущая хворосту воз.',
+    '5',
   ),
   new TestComment(
     2,
-    'Имя2',
-    '2017-11-02',
-    'Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Odio nemo veritatis dolorum maiores modi, facere, dicta quo earum soluta, assumenda incidunt! Beatae totam quidem, iusto',
-    '5',
+    'Aikidoka',
+    '2013-02-31T12:17:58.215Z',
+    'I would like to invite you on my Birthday',
+    '2',
   ),
 ];
