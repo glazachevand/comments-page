@@ -12,12 +12,6 @@ view.form.addEventListener('submit', function (e) {
   submitHandler(this);
 });
 
-document.addEventListener("keydown", function (e) {
-  if (e.key == 'Enter') {
-    submitHandler(view.form);
-  }
-});
-
 view.form.addEventListener('input', view.removeMessage);
 
 view.list.addEventListener('click', clickHandler);
