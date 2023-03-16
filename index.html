@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Блок с комментариями</title>
+  <link rel="stylesheet" href="./css/main.min.css">
+  <script defer="defer" src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="main">
+      <section class="add-comment">
+        <h2 class="title">Добавить комментарий</h2>
+        <form action="#" class="add-comment__form" name="commentform" novalidate>
+          <div class="add-comment__notes">Обязательные поля помечены <span class="red">*</span>
+          </div>
+          <div class="add-comment__row">
+            <label for="author">Имя <span class="red">*</span>
+            </label>
+            <input type="text" id="author" name="author" maxlength="50" title="введите имя" required autocomplete>
+          </div>
+          <div class="add-comment__row">
+            <label for="date">Дата</label>
+            <input type="date" id="date" name="date" value="">
+          </div>
+          <div class="add-comment__row">
+            <label for="comment-text">Комментарий <span class="red">*</span>
+            </label>
+            <textarea name="text" id="comment-text" title="Напишите комментарий" placeholder="Ваш комментарий..." required></textarea>
+          </div>
+          <input type="submit" name="submit" class="add-comment__submit" value="Отправить комментарий">
+        </form>
+      </section>
+      <section class="comments">
+        <h1 class="title">Комментарии</h1>
+        <ul class="comments__list"></ul>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

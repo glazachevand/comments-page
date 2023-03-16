@@ -1,0 +1,281 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+input,
+textarea {
+  font: inherit inherit;
+  color: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input[type=submit] {
+  display: inline-block;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "IcoFont";
+  font-weight: normal;
+  font-style: "Regular";
+  src: url("../fonts/icofont.woff2") format("woff2");
+}
+
+[class^=icofont-],
+[class*=" icofont-"] {
+  display: inline-block;
+  font-family: "IcoFont" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+  color: #c41a04;
+  cursor: pointer;
+}
+
+.icofont-ui-delete:before {
+  content: "\ec53";
+}
+
+.icofont-ui-love:before {
+  font-size: 20px;
+  content: "\ec65";
+}
+
+body {
+  font: 16px Arial, Helvetica, sans-serif;
+  background: #f3ffff;
+  margin: 0;
+  color: #666;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 940px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #1f4037;
+}
+
+label {
+  color: #777;
+  font-size: 0.75rem;
+}
+
+input,
+textarea {
+  display: block;
+  padding: 5px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text] {
+  width: 50%;
+}
+
+textarea {
+  width: 100%;
+  min-height: 60px;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.875rem;
+  color: #9a9999;
+}
+
+.red {
+  color: #c41a04;
+  font-weight: bold;
+}
+
+.invalid {
+  border-color: #c41a04;
+}
+
+.message-error {
+  background: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #c41a04;
+  border: 1px solid #c41a04;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.add-comment {
+  padding: 10px 0;
+}
+
+.add-comment__notes {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.add-comment__row {
+  position: relative;
+  margin: 0 0 10px 0;
+}
+
+.add-comment__submit {
+  background: #f9f9f9;
+  padding: 7px 10px;
+  font-weight: bold;
+  color: #0a8578;
+}
+
+.add-comment__submit:hover {
+  background: #f2efef;
+}
+
+.comments {
+  padding: 10px 0;
+}
+
+.comments__item {
+  border-bottom: 2px solid #e7e7e7;
+}
+
+.comment {
+  padding: 10px 0;
+}
+
+.comment__author {
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #0a8578;
+}
+
+.comment__date {
+  margin: 0 0 10px 0;
+  font-size: 0.75rem;
+}
+
+.comment__text {
+  margin: 0 0 10px 0;
+  text-align: justify;
+}
+
+.comment__btn-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.comment__like {
+  width: 1.25rem;
+}
+
+.comment__like-count {
+  margin-left: 5px;
+  font-size: 0.75rem;
+  color: #c41a04;
+}
+
+.comment__remove {
+  margin-left: auto;
+}
+
+@supports (-webkit-appearance:none) {
+
+}
+
+@media (max-width: 768px) {
+  input[type=text] {
+    width: 100%;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
