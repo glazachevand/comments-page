@@ -1,25 +1,36 @@
 import { testData } from './test.js';
-import * as view from './view.js';
-import * as model from './model.js';
+import { ViewComments } from './view.js';
+import { Comments, validate } from './model.js';
 
-view.renderTestData(model.loadTestComments(testData));
+const model = new Comments(testData);
+const view = new ViewComments(testData);
 
-view.DOMElements.form.addEventListener('submit', submitHandler);
+view.renderTestData(model.comments);
 
-view.DOMElements.form.addEventListener('input', view.removeMessage);
-
-view.DOMElements.list.addEventListener('click', clickHandler);
-
-function submitHandler(e) {
+view.form.addEventListener('submit', function (e) {
   e.preventDefault();
+  submitHandler(this);
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key == 'Enter') {
+    submitHandler(view.form);
+  }
+});
+
+view.form.addEventListener('input', view.removeMessage);
+
+view.list.addEventListener('click', clickHandler);
+
+function submitHandler(form) {
   view.removeMessages();
-  const errors = model.validate(this);
+  const errors = validate(form);
 
   if (errors.length > 0) {
     view.showErrors(errors);
   } else {
-    view.renderNewComment(model.addComment(this));
-    view.clearForm(this);
+    view.renderNewComment(model.addComment(form));
+    view.clearForm(form);
   }
 }
 

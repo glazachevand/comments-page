@@ -1,7 +1,9 @@
-class TestComment {
-  constructor(id, author, date, text, likes) {
-    (this.id = id), (this.author = author), (this.date = date), (this.text = text), (this.likes = likes);
-  }
+function TestComment(id, author, date, text, likes) {
+  this.id = id;
+  this.author = author;
+  this.date = date;
+  this.text = text;
+  this.likes = likes;
 }
 
 export const testData = [

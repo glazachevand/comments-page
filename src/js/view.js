@@ -1,26 +1,23 @@
-const DOMElements = {
-  form: document.getElementsByName('commentform')[0],
-  list: document.querySelector('.comments__list'),
-  date: document.getElementById('date'),
-};
+export function ViewComments() {
+  this.form = document.getElementsByName('commentform')[0];
+  this.list = document.querySelector('.comments__list');
+}
 
-function renderTestData(data) {
-  DOMElements.list.innerHTML = '';
+ViewComments.prototype.renderTestData = function (data) {
+  this.list.innerHTML = '';
   const now = new Date();
-  DOMElements.date.value = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now
-    .getDate()
-    .toString()
-    .padStart(2, '0')}`;
+  this.form.date.value =
+    `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
   for (const item of data) {
-    renderNewComment(item);
+    this.renderNewComment(item);
   }
 }
 
-function renderNewComment(comment) {
-  const html = ` 
+ViewComments.prototype.renderNewComment = function (comment) {
+  const html = `
   <li class="comments__item comment" data-key="${comment.id}">
     <div class="comment__author">${comment.author}</div>
-    <div class="comment__date"> <time datetime="${comment.date}">${renderTime(comment.date)}</time></div>
+    <div class="comment__date"> <time datetime="${comment.date}">${this.renderTime(comment.date)}</time></div>
     <p class="comment__text">${comment.text}</p>
     <div class="comment__btn-row">
       <div class="like comment__like icofont-ui-love" title="Нравится" data-action="like"></div>
@@ -28,10 +25,10 @@ function renderNewComment(comment) {
       <div class="comment__remove icofont-ui-delete" title="удалить" data-action="remove"></div>
     </div>
   </li>`;
-  DOMElements.list.insertAdjacentHTML('beforeend', html);
+  this.list.insertAdjacentHTML('beforeend', html);
 }
 
-function renderTime(timestamp) {
+ViewComments.prototype.renderTime = function (timestamp) {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
@@ -48,7 +45,7 @@ function renderTime(timestamp) {
   }
 }
 
-function showErrors(errors) {
+ViewComments.prototype.showErrors = function (errors) {
   for (const item of errors) {
     const message = document.createElement('div');
     message.className = 'message-error';
@@ -62,7 +59,7 @@ function showErrors(errors) {
   errors[0].elem.focus();
 }
 
-function removeMessages() {
+ViewComments.prototype.removeMessages = function () {
   const messages = document.querySelectorAll('.message-error');
 
   for (const item of messages) {
@@ -70,7 +67,7 @@ function removeMessages() {
   }
 }
 
-function removeMessage(e) {
+ViewComments.prototype.removeMessage = function (e) {
   const target = e.target;
 
   if (target.nextElementSibling && (target.tagName == 'INPUT' || target.tagName == 'TEXTAREA')) {
@@ -79,16 +76,18 @@ function removeMessage(e) {
   }
 }
 
-function clearForm(form) {
+ViewComments.prototype.clearForm = function (form) {
   form.reset();
-  form.date.value = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  form.date.value =
+    `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
 }
 
-function removeCommentFromView(elem) {
+ViewComments.prototype.removeCommentFromView = function (elem) {
   elem.remove();
 }
 
-function renderLikes(elem, count, op) {
+ViewComments.prototype.renderLikes = function (elem, count, op) {
   const like = elem.querySelector('.like');
   elem.querySelector('.like-count').textContent = count || '';
 
@@ -101,14 +100,6 @@ function renderLikes(elem, count, op) {
   }
 }
 
-export {
-  DOMElements,
-  renderTestData,
-  renderNewComment,
-  showErrors,
-  removeMessages,
-  removeMessage,
-  clearForm,
-  removeCommentFromView,
-  renderLikes,
-};
+
+
+

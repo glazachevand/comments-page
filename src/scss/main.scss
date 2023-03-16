@@ -57,9 +57,9 @@ textarea::placeholder {
   z-index: 10;
 }
 .add-comment {
-  margin-bottom: 15px;
+  padding: 10px 0;
   &__notes {
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     font-size: 12px;
     font-style: italic;
   }
@@ -78,6 +78,7 @@ textarea::placeholder {
   }
 }
 .comments {
+  padding: 10px 0;
   &__item {
     border-bottom: 2px solid #e7e7e7;
   }
